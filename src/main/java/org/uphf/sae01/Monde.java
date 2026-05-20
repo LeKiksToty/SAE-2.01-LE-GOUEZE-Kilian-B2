@@ -40,6 +40,35 @@ public class Monde {
         tourActuel++;
     }
 
+    public void deplacerRobot(Robot r, String direction) {
+        int ancienneLigne = r.getLigne();
+        int ancienneColonne = r.getColonne();
+
+        r.avancer(direction);
+
+        if (r.getLigne() >= 0 && r.getLigne() < 10 && r.getColonne() >= 0 && r.getColonne() < 10) {
+            Secteur prochainSecteur = matrice[r.getLigne()][r.getColonne()];
+            if (prochainSecteur.estDisponible()) {
+                matrice[ancienneLigne][ancienneColonne].setRobot(null);
+                prochainSecteur.setRobot(r);
+            } else {
+                r.avancer(inverserDirection(direction));
+            }
+        } else {
+            r.avancer(inverserDirection(direction));
+        }
+    }
+
+    private String inverserDirection(String direction) {
+        return switch (direction.toUpperCase()) {
+            case "NORD", "N" -> "SUD";
+            case "SUD", "S" -> "NORD";
+            case "EST", "E" -> "OUEST";
+            case "OUEST", "O" -> "EST";
+            default -> "";
+        };
+    }
+
     public void afficherConsole() {
         System.out.println("--- Tour " + tourActuel + " ---");
         for (int i = 0; i < 10; i++) {

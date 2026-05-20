@@ -24,10 +24,10 @@ public class Robot {
 
     public void avancer(String direction) {
         switch (direction.toUpperCase()) {
-            case "NORD" -> ligne--;
-            case "SUD" -> ligne++;
-            case "EST" -> colonne++;
-            case "OUEST" -> colonne--;
+            case "NORD", "N" -> ligne--;
+            case "SUD", "S" -> ligne++;
+            case "EST", "E" -> colonne++;
+            case "OUEST", "O" -> colonne--;
         }
     }
 
