@@ -132,12 +132,12 @@ public class MondeGraphique extends Application {
 
             Rectangle rectOr = new Rectangle(12, 12, Color.GOLD);
             rectOr.setStroke(Color.GRAY);
-            Label txtOr = new Label(" Spécialité Or    ");
+            Label txtOr = new Label(" Or    ");
             txtOr.setStyle("-fx-font-size: 11px;");
 
             Rectangle rectNi = new Rectangle(12, 12, Color.LIGHTSTEELBLUE);
             rectNi.setStroke(Color.GRAY);
-            Label txtNi = new Label(" Spécialité Nickel  ");
+            Label txtNi = new Label(" Nickel  ");
             txtNi.setStyle("-fx-font-size: 11px;");
 
             HBox legendeBox = new HBox(5, titreLegende, rectEau, txtEau, rectOr, txtOr, rectNi, txtNi);
