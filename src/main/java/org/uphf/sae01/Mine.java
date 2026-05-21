@@ -27,7 +27,10 @@ public class Mine {
             return reste;
         }
     }
-
+    public void setPosition(int l, int c) {
+        this.ligne = l;
+        this.colonne = c;
+    }
     public int getId() { return id; }
     public String getTypeMinerai() { return typeMinerai; }
     public int getQuantiteActuelle() { return quantiteActuelle; }
